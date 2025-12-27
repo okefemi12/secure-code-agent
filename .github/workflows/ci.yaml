@@ -32,7 +32,9 @@ jobs:
       run: |
         flake8 src tests --count --select=E9,F63,F7,F82 --show-source --statistics
 
-    # 5. Run Tests
+    # 5. Run Tests (UPDATED)
     - name: Run Unit Tests
+      env:
+        PYTHONPATH: .
       run: |
         pytest tests/
