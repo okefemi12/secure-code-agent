@@ -37,5 +37,8 @@ jobs:
     # 5. Run Tests (FIXED PATH)
     # "python -m pytest" automatically adds the current folder to the path
     - name: Run Unit Tests
+      env:
+        # This unlocks the vault and passes the token to python
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}  
       run: |
         python -m pytest tests/
